@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+ <html lang="en" title="Coding design">
+ 
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>Responsive HTML Table With Pure CSS - Web Design/UI Design</title>
+     <link rel="stylesheet" href="../static/drivers_vehicles.css">
+ </head>
+ 
+ <body>
+     <main class="table">
+         <section class="table__header">
+             <h1> VEHICLES DETAILS</h1>
+             <div class="input-group">
+                 <input type="search" placeholder="Search Data...">
+                 <img src="images/search.png" alt="">
+             </div>
+             <div class="export__file">
+                 <label for="export-file" class="export__file-btn" title="Export File"></label>
+                 <input type="checkbox" id="export-file">
+                 <div class="export__file-options">
+                     <label>Export As &nbsp; &#10140;</label>
+                     <label for="export-file" id="toPDF">PDF <img src="images/pdf.png" alt=""></label>
+                     <label for="export-file" id="toJSON">JSON <img src="images/json.png" alt=""></label>
+                     <label for="export-file" id="toCSV">CSV <img src="images/csv.png" alt=""></label>
+                     <label for="export-file" id="toEXCEL">EXCEL <img src="images/excel.png" alt=""></label>
+                 </div>
+             </div>
+         </section>
+         <section class="table__body">
+             <table>
+                 <thead>
+                     <tr>
+                         <th> Id <span class="icon-arrow">&UpArrow;</span></th>
+                         <th> Vehicle_name <span class="icon-arrow">&UpArrow;</span></th>
+                         <th> vehicle_num <span class="icon-arrow">&UpArrow;</span></th>
+                         <th> Driver_name <span class="icon-arrow">&UpArrow;</span></th>
+                         <th> Status <span class="icon-arrow">&UpArrow;</span></th>
+                     </tr>
+                 </thead>
+
+                 <tbody>
+                     <tr>
+                         <td> 1 </td>
+                         <td> Tata</td>
+                         <td> KA 01 </td>
+                         <td> srinivas</td>
+                         <td>
+                             <p class="status delivered">Available</p>
+                         </td>
+                     </tr>
+
+                     <tr>
+                         <td> 2 </td>
+                         <td> Tata </td>
+                         <td> Ka 50 </td>
+                         <td> chethan </td>
+                         <td>
+                             <p class="status cancelled">Unavailable</p>
+                         </td>
+                     </tr>
+
+                     <tr>
+                         <td> 3</td>
+                         <td> Suzuki</td>
+                         <td> Ka 51 </td>
+                         <td> chandru </td>
+                         <td>
+                             <p class="status shipped">In Ride</p>
+                         </td>
+                     </tr>
+
+                     <tr>
+                         <td> 4</td>
+                         <td> TATA </td>
+                         <td> KA 09 </td>
+                         <td> iksh </td>
+                         <td>
+                             <p class="status delivered">Available</p>
+                         </td>
+                     </tr>
+
+                     <tr>
+                         <td> 5</td>
+                         <td> Sarita Limbu </td>
+                         <td> Paris </td>
+                         <td> vignesh</td>
+                         <td>
+                             <p class="status pending">Dropping of</p>
+                         </td>
+                     </tr>
+
+                     <tr>
+                         <td> 6</td>
+                         <td> Alex Gonley </td>
+                         <td> London </td>
+                         <td> sanjay</td>
+                         <td>
+                             <p class="status cancelled">Available</p>
+                         </td>
+                     </tr>
+
+                     <tr>
+                         <td> 7</td>
+                         <td> Jeet Saru </td>
+                         <td> New York </td>
+                         <td> shivanna </td>
+                         <td>
+                             <p class="status delivered">Unvailable</p>
+                         </td>
+                     </tr>
+
+                     <tr>
+                         <td> 8</td>
+                         <td> Aayat Ali Khan </td>
+                         <td> Islamabad </td>
+                         <td> manjunath </td>
+                         <td>
+                             <p class="status pending">In Ride</p>
+                         </td>
+                     </tr>
+
+                     <tr>
+                         <td> 9</td>
+                         <td> Alson GC </td>
+                         <td> Dhaka </td>
+                         <td> abhijith </td>
+                         <td>
+                             <p class="status cancelled">Unvailable</p>
+                         </td>
+                     </tr>
+                 </tbody>
+             </table>
+         </section>
+     </main>
+ </body>
+ 
+ </html>
