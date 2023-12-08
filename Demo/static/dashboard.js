@@ -9,3 +9,23 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   });
+
+  document.querySelectorAll('.know-more').forEach(button => {
+    button.addEventListener('click', function() {
+        alert('More details to come!');
+    });
+});
+
+document.querySelectorAll('.know-more-one').forEach(button => {
+  button.addEventListener('click', function() {
+      alert('More details to come!');
+  });
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  var knowMoreButton = document.querySelector('.know-more-two');
+  knowMoreButton.addEventListener('click', function() {
+      alert('More information about driver performance.');
+  });
+});

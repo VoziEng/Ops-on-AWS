@@ -29,54 +29,239 @@
     }
     
     
-    /* Main Content Styles */ #main-content {
+    #main-content {
     margin-left: 250px; padding: 20px;
     }
     
-    .logo{
-        position: fixed
-        top=0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        transition: 0.6s;
-        padding: 40px 100px;
+    .fixed-logo {
+        position: fixed; /* Keeps the logo fixed during scrolling */
+        top: 10px;      /* Distance from the top of the viewport */
+        left: 40px;     /* Distance from the left of the viewport */
+        z-index: 1000;  /* Ensures the logo stays above other content */
     }
 
 
     .card { background: #fff; color: black;
-    border-radius: 8px; padding: 20px; margin-bottom: 20px;
+    border-radius: 8px; padding: 15px; margin-bottom: -10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
     
     
-    /* Dashboard Overview */ #dashboard-overview {
+    #dashboard-overview 
+    { 
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(156px, 1fr)); gap: 20px;
+    }
+    
+
+    #map-container {
+        float: left;
+        display: flex; /* Use flexbox to center the map */
+        justify-content: left; /* Center map horizontally */
+        align-items: left; /* Center map vertically */
+        height: 70vh;
+        width: 650px; /* Full viewport height */
+        padding: 20px; /* Add padding around the map if needed */
+    }
+    
+    #map {
+        max-width: 100%; /* Ensures the map is responsive */
+        height: auto; /* Adjust height automatically */
+        border: none; /* Remove border */
+        /* Adjust as needed for specific alignment and spacing */
+    }
+    
      
+    
+    
+    /* Car Performance Styles */ 
+    #car-performance
+    {
+    float: right;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px;
+    }
+    
+    .dashboard-block {
+        float: left;
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+        padding: 20px;
+        width: calc(48.333% - 26px);
+        float: left;
+        margin-right: 20px;
+    }
+    
+    .block-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    
+    .block-header span {
+        font-weight: bold;
+    }
+    
+    .know-more {
+        background: none;
+        border: none;
+        color: blue;
+        cursor: pointer;
+    }
+    
+    .block-content {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+    
+    .block-item h2 {
+        margin: 0;
+        color: #333;
+        font-size: 1.5em;
+    }
+    
+    .block-item p {
+        margin: 0;
+        color: #666;
+    }
+    
+    .block-footer h2 {
+        margin: 0;
+        color: #333;
+        font-size: 1.5em;
+        border-top: 1px solid #eee;
+        padding-top: 20px;
+    }
+    
+    .block-footer p {
+        margin: 0;
+        color: #666;
+    }
+    
+
+    .dashboard-block-one {
+        float: right;
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+        padding: 20px;
+        width: calc(48.333% - 26px);
+        float: left;
+        margin-right: 20px;
+    }
+    
+    .block-header-one {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    
+    .block-header-one span {
+        font-weight: bold;
+    }
+    
+    .know-more-one {
+        background: none;
+        border: none;
+        color: blue;
+        cursor: pointer;
+    }
+    
+    .block-content-one {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+    
+    .block-item-one h2 {
+        margin: 0;
+        color: #333;
+        font-size: 1.5em;
+    }
+    
+    .block-item-one p {
+        margin: 0;
+        color: #666;
+    }
+    
+    .block-footer-one h2 {
+        margin: 0;
+        color: #333;
+        font-size: 1.5em;
+        border-top: 1px solid #eee;
+        padding-top: 20px;
+    }
+    
+    .block-footer-one p {
+        margin: 0;
+        color: #666;
+    }
+    
+
+    .performance-block {
+        align:end ;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        width: 100%; /* Adjust the width as needed */
+        box-sizing: border-box;
+    }
+    
+    .block-header-two {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #eee;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+    }
+    
+    .block-header-two h2 {
+        font-size: 1.2em;
+        margin: 0;
+    }
+    
+    .know-more-two {
+        background: none;
+        border: none;
+        color: #007bff;
+        cursor: pointer;
+        font-size: 0.9em;
+    }
+    
+    .block-body {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    
+    .metric h3 {
+        font-size: 1.5em;
+        margin: 0;
+        color: #333;
+    }
+    
+    .metric p {
+        font-size: 0.9em;
+        color: #666;
+        margin: 4px 0;
     }
     
     
-    /* Map Styles */ #live-map #map { height: 300px;
-    background: #e9e9e9; margin-bottom: 20px;
-    }
-    
-    
-    /* Car Performance Styles */ #car-performance {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;
-    }
-    
-    
-    /* Responsive Design */ @media (max-width: 768px) { #sidebar {
+    @media (max-width: 768px) { #sidebar {
     width: 100%; height: auto; position: relative;
     }
     
     
-    #main-content { margin-left: 0;
+    #main-content 
+    { margin-left: 0;
     }
      
     #dashboard-overview, #car-performance { grid-template-columns: 1fr;
