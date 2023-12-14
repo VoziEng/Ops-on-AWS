@@ -1,0 +1,127 @@
+/* General resets and typography */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+  }
+  
+  /* Full background setup */
+  body {
+    background: url('images/bg.png') no-repeat center center fixed;
+    background-size: cover;
+  }
+  
+  /* Overlay with a slight dark shade to improve text visibility */
+  .overlay {
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay for better readability */
+    color: #fff;
+    height: 100%;
+    padding: 30px;
+  }
+  
+  /* Container and layout */
+  .dashboard-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Header styles */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  
+  .header h1 {
+    font-size: 26px;
+    color:black;
+  }
+  
+  /* Button styles */
+  .button {
+    padding: 10px 20px;
+    background: linear-gradient(to right, grey, black);
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s, transform 0.2s;
+  }
+  
+  .button:hover {
+    background: linear-gradient(to right, #1e88e5, #64b5f6);
+    transform: translateY(-2px);
+  }
+  
+  /* Input styles */
+  #searchDriver {
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: all 0.3s;
+    margin-right: 10px;
+  }
+  
+  #searchDriver:focus {
+    outline: none;
+    border-color: #64b5f6;
+    box-shadow: 0 0 8px rgba(100, 181, 246, 0.5);
+  }
+  
+  /* Table styles */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    background-color:black;
+    color:white;
+    font-weight: 500;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f1f8e9;
+  }
+  
+  tr:hover {
+    background-color: #e1f5fe;
+    cursor: pointer;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .header {
+      flex-direction: column;
+    }
+  
+    .header h1 {
+      margin-bottom: 20px;
+    }
+  
+    .button {
+      margin-top: 10px;
+    }
+  }
+  

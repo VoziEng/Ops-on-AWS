@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+<title>Driver Performance Dashboard</title>
+<link rel="stylesheet" href="../static/performance.css">
+</head>
+<body>
+
+<div class="dashboard-container">
+
+    <div class="header">
+        <h1>PERFORMANCE </h1>
+        <div>
+        <input type="text" id="searchDriver" placeholder="Search Driver">
+        <!-- Update the `href` to the path of the file you want to download -->
+        <a href="path_to_your_file.csv" class="button" download="Performance_Report.csv">Download</a>
+        </div>
+    </div>
+  
+  <table>
+    <thead>
+      <tr>
+        <th>Driver Name</th>
+        <th>Booking Request</th>
+        <th>Acceptance Rate</th>
+        <th>Cancellation Rate</th>
+        <th>Completed Trips</th>
+        <th>Earnings</th>
+        <th>Cash Collected</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Abhishek BN</td>
+        <td>16</td>
+        <td>100%</td>
+        <td>25%</td>
+        <td>9</td>
+        <td>₹2115.77</td>
+        <td>₹1692</td>
+      </tr>
+      <tr>
+        <td>Anjaneya N</td>
+        <td>8</td>
+        <td>100%</td>
+        <td>78.5%</td>
+        <td>3</td>
+        <td>₹542.06</td>
+        <td>₹590</td>
+      </tr>
+      <tr>
+        <td>Manjanna</td>
+        <td>10</td>
+        <td>90%</td>
+        <td>98.5%</td>
+        <td>5</td>
+        <td>₹578</td>
+        <td>₹890</td>
+      </tr>
+      <tr>
+        <td>Sidappa</td>
+        <td>12</td>
+        <td>56%</td>
+        <td>90%</td>
+        <td>16</td>
+        <td>₹250</td>
+        <td>₹980</td>
+      </tr>
+      <!-- Add more rows here -->
+    </tbody>
+  </table>
+</div>
+
+<script src="../static/performance.js"></script>
+</body>
+</html>

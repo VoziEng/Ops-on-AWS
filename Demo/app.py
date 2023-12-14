@@ -57,6 +57,10 @@ def driver():
 def vehicles():
     return render_template('vehicles.html')
 
+@app.route('/performance')
+def performance():
+    return render_template('performance.html')
+
 # Route for the index page
 @app.route('/')
 def index():
