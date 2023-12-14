@@ -61,6 +61,10 @@ def vehicles():
 def performance():
     return render_template('performance.html')
 
+@app.route('/livemap')
+def livemap():
+    return render_template('livemap.html')
+
 # Route for the index page
 @app.route('/')
 def index():

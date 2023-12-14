@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Live Map Tracking</title>
+    <link rel="stylesheet" href="../static/livemap.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+</head>
+<body><header>
+  <h1>LIVE MAP</h1>
+</header>
+
+<div class="container">
+  <aside class="sidebar">
+      <div class="search-container">
+          <input type="text" placeholder="Search Driver" id="search-driver">
+      </div>
+
+      <div class="status-filters">
+          <div class="status-filter in-trip">In Trip - 0</div>
+          <div class="status-filter idle">Idle - 2</div>
+          <div class="status-filter off-duty">Off Duty - 0</div>
+      </div>
+
+      <div id="dashboard">
+        <div id="driver-list">
+          <ul id="driver-menu">
+              <li class="driver-item">GANGADHARA R</li>
+              <li class="driver-item">Dadapeer D R</li>
+              <li class="driver-item">SACHIN G S G S</li>
+              <li class="driver-item">Mohammed Waseem Akram</li>
+              <li class="driver-item">Prathap</li>
+              <li class="driver-item">Abhishek BN</li>
+              <!-- More drivers can be added here -->
+          </ul>
+        </div>
+
+  </aside>
+  <main class="map-view" id="map">
+      <!-- Map will be integrated here -->
+  </main>
+</div>
+
+
+      <div id="map"></div>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="../static/livemap.js"></script>
+</body>
+</html>
