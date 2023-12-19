@@ -292,3 +292,71 @@
     }
     }
     
+
+    /* style.css */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  
+  .navbar {
+    background-color: #333; /* Dark gray for a subtle, elegant look */
+    padding: 30px 30px; /* Increased padding for a larger header */
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; /* Added for positioning the dropdown relative to navbar */
+  }
+  
+  .dropdown {
+    position: absolute;
+    top: 50%; /* Center vertically in the navbar */
+    right: 30px; /* Right aligned with some padding */
+    transform: translateY(-50%); /* Adjust to perfectly center vertically */
+  }
+  
+  .dropbtn {
+    background-color: #666; /* Slightly lighter shade for the button */
+    border: none; /* Removed border for a cleaner look */
+    cursor: pointer;
+    width: 50px; /* Increased size for better visibility */
+    height: 50px; /* Increased size for better visibility */
+    border-radius: 50%;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #fff; /* Contrast with the dark dropdown button */
+    min-width: 200px; /* Slightly wider for better layout */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 5px;
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: #333; /* Dark text for readability */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #ddd; /* Light gray background on hover for a subtle effect */
+  }
+  
+  .show {
+    display: block;
+  }
+  

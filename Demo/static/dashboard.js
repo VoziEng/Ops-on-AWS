@@ -29,3 +29,31 @@ knowMoreButton.addEventListener('click', function() {
     alert('More information about driver performance.');
 });
 });
+
+
+// script.js
+document.addEventListener("DOMContentLoaded", function() {
+  // When the user clicks on the profile icon, toggle between hiding and showing the dropdown content
+  document.querySelector('.dropbtn').addEventListener('click', function() {
+      document.getElementById("myDropdown").classList.toggle("show");
+  });
+
+  // Close the dropdown if the user clicks outside of it
+  window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn')) {
+          var dropdowns = document.getElementsByClassName("dropdown-content");
+          for (var i = 0; i < dropdowns.length; i++) {
+              var openDropdown = dropdowns[i];
+              if (openDropdown.classList.contains('show')) {
+                  openDropdown.classList.remove('show');
+              }
+          }
+      }
+  }
+
+  // Optional: Add functionality for logout
+  document.getElementById('logout').addEventListener('click', function() {
+      // Logout logic here
+      console.log("Logging out...");
+  });
+});

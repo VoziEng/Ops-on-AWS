@@ -1,17 +1,30 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, jsonify
 import mysql.connector
+import pymysql
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)  # Enable CORS
 
-# Configure your MySQL connection
+# Database connection credentials
+HOST = '127.0.0.1'
+USER = 'root'
+PASSWORD = 'Amrutha@2901'
+DB = 'login_data'
+
+# Connect to the MySQL database
 db = mysql.connector.connect(
-    host="127.0.0.1",
-    user="root",
-    password="Amrutha@2901",
-    database="login_data"
+    host=HOST,
+    user=USER,
+    password=PASSWORD,
+    database=DB
 )
 
 cursor = db.cursor()
+
+# Connect to the database with pymysql (for JSON data)
+def get_db_connection():
+    return pymysql.connect(host=HOST, user=USER, password=PASSWORD, db=DB, cursorclass=pymysql.cursors.DictCursor)
 
 # Route for the signup page
 @app.route('/signup', methods=['POST'])
@@ -32,15 +45,13 @@ def login():
     email = request.args.get('email')
     password = request.args.get('password')
 
-    # Check if user credentials are valid (a simple example)
+    # Check if user credentials are valid
     cursor.execute("SELECT * FROM users WHERE email = %s AND password = %s", (email, password))
     user = cursor.fetchone()
 
     if user:
-        # Credentials are valid, redirect to the dashboard
         return redirect(url_for('dashboard'))
     else:
-        # Credentials are not valid, handle accordingly
         return redirect(url_for('index'))
 
 # Route for the dashboard
@@ -48,7 +59,7 @@ def login():
 def dashboard():
     return render_template('dashboard.html')
 
-# Route for the Driver page
+# Other routes
 @app.route('/driver')
 def driver():
     return render_template('drivers.html')
@@ -70,5 +81,48 @@ def livemap():
 def index():
     return render_template('login.html')
 
+# API route to get vehicle data
+@app.route('/vehicles_data')
+def vehicles_data():
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    
+    try:
+        cursor.execute('SELECT * FROM vehicle_info')
+        data = cursor.fetchall()
+        return jsonify(data)
+    finally:
+        cursor.close()
+        conn.close()
+
+# New API route to get driver data
+@app.route('/drivers_data')
+def drivers_data():
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    
+    try:
+        cursor.execute('SELECT * FROM driver_info')  # Using the correct table name
+        data = cursor.fetchall()
+        return jsonify(data)
+    finally:
+        cursor.close()
+        conn.close()
+
+# API route to get performance data
+@app.route('/performance_data')
+def performance_data():
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    
+    try:
+        cursor.execute('SELECT * FROM performance_info')
+        data = cursor.fetchall()
+        return jsonify(data)
+    finally:
+        cursor.close()
+        conn.close()
+
 if __name__ == '__main__':
     app.run(debug=True)
+
