@@ -7,9 +7,9 @@ app = Flask(__name__)
 CORS(app)  # Enable CORS
 
 # Database connection credentials
-HOST = '127.0.0.1'
+HOST = 'ops-vozi.cnquomsy6jyc.us-east-1.rds.amazonaws.com'
 USER = 'root'
-PASSWORD = 'Amrutha@2901'
+PASSWORD = 'Vozi1234'
 DB = 'login_data'
 
 # Connect to the MySQL database
