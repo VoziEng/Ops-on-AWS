@@ -7,7 +7,7 @@ app = Flask(__name__)
 CORS(app)  # Enable CORS
 
 # Database connection credentials
-HOST = 'ops-vozi.cnquomsy6jyc.us-east-1.rds.amazonaws.com'
+HOST = 'operator-vozi.csrcizgxwac6.ap-south-1.rds.amazonaws.com'
 USER = 'root'
 PASSWORD = 'Vozi1234'
 DB = 'login_data'
