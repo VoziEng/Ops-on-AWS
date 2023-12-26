@@ -76,6 +76,10 @@ def performance():
 def livemap():
     return render_template('livemap.html')
 
+@app.route('/ogout')
+def Logout():
+    return render_template('login.html')
+
 # Route for the index page
 @app.route('/')
 def index():

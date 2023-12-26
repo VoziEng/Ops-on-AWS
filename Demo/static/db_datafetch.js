@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
             return '/vehicles_data';
         } else if (document.URL.includes('performance')) {
             return '/performance_data'; 
-        }
+        } 
     }
 
     const endpoint = determineEndpoint();

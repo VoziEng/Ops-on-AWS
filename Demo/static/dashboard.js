@@ -30,34 +30,6 @@ knowMoreButton.addEventListener('click', function() {
 });
 });
 
-
-// script.js
-document.addEventListener("DOMContentLoaded", function() {
-  // When the user clicks on the profile icon, toggle between hiding and showing the dropdown content
-  document.querySelector('.dropbtn').addEventListener('click', function() {
-      document.getElementById("myDropdown").classList.toggle("show");
-  });
-
-  // Close the dropdown if the user clicks outside of it
-  window.onclick = function(event) {
-      if (!event.target.matches('.dropbtn')) {
-          var dropdowns = document.getElementsByClassName("dropdown-content");
-          for (var i = 0; i < dropdowns.length; i++) {
-              var openDropdown = dropdowns[i];
-              if (openDropdown.classList.contains('show')) {
-                  openDropdown.classList.remove('show');
-              }
-          }
-      }
-  }
-
-  // Optional: Add functionality for logout
-  document.getElementById('logout').addEventListener('click', function() {
-      // Logout logic here
-      console.log("Logging out...");
-  });
-});
-
 document.getElementById('toPDF').addEventListener('mouseover', function() {
   this.classList.add('hover-blue');
 });
@@ -79,3 +51,21 @@ function exportTableToExcel() {
       XLSX.writeFile(workbook, fileName + '.xlsx'); // Write the file
   }
 }
+
+// JavaScript for search functionality
+
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.querySelector('input[type="search"]');
+
+  searchInput.addEventListener('input', function() {
+      const searchTerm = this.value.toLowerCase();
+      const table = document.querySelector('.table__body table');
+      const rows = table.querySelectorAll('tbody tr');
+
+      rows.forEach(row => {
+          const cells = row.querySelectorAll('td');
+          const rowText = Array.from(cells).reduce((acc, cell) => acc + cell.textContent.toLowerCase(), '');
+          row.style.display = rowText.includes(searchTerm) ? '' : 'none';
+      });
+  });
+});
