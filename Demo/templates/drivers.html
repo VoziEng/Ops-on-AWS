@@ -5,11 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Responsive HTML Table With Pure CSS - Web Design/UI Design</title>
     <link rel="stylesheet" href="../static/drivers_vehicles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.2/xlsx.full.min.js"></script>
+    <script src="../static/dashboard.js" defer></script>
     <style>
         /* Add your CSS styles here */
     </style>
 </head>
 <body>
+    <aside id="sidebar">
+        <nav>
+           <div class="fixed-logo">
+                <img src="../static/images/logo.svg" alt="logo" width="140px" max-width="100%" height="auto">
+            </div>
+         
+            <div class="top-options">
+                <ul>
+                    <li><a href="#Dashboard">Dashboard</a></li>
+                    <li><a href="#Driver">Driver</a></li>
+                    <li><a href="#Vehicles">Vehicles</a></li>
+                    <li><a href="#Performance">Performance</a></li>
+                    <li><a href="#LiveMap">LiveMap</a></li>
+                </ul>
+            </div>
+            <div class="bottom-options">
+                <ul>
+                    <li> <a href="Terms and Condition">Terms and Condition</a></li>
+                    <li> <a href="privacy Policy">Privacy Policy</a></li>
+                </ul>
+        </nav>
+    </aside>
     <main class="table">
         <section class="table__header">
             <h1>DRIVER DETAILS</h1>
@@ -22,7 +46,7 @@
                 <input type="checkbox" id="export-file">
                 <div class="export__file-options">
                     <label>Export As &nbsp; &#10140;</label>
-                    <label for="export-file" id="toPDF">PDF</label>
+                    <label for="export-file" id="toPDF" onclick="exportTableToExcel()">EXCEL</label>
                 </div>
             </div>
         </section>

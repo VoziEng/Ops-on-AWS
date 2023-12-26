@@ -14,15 +14,51 @@ body {
     align-items: center;
 }
 
+ /* Sidebar Styles */
+ #sidebar {
+    background-color: black;
+    color: white;
+    width: 250px; height: 100vh;
+    }
+    
+    
+    #sidebar nav ul {
+    list-style-type: none; padding: 20px;
+    }
+    
+    
+    #sidebar nav ul li a { color: white;
+    text-decoration: none; padding: 10px; display: block;
+    }
+
+    .top-options{
+        position: absolute;
+        top: 50px
+    }
+
+    .bottom-options{
+        position: absolute;
+        bottom: 0;
+    }
+    
+    #main-content {
+    margin-left: 250px; padding: 20px;
+    }
+    
+    .fixed-logo {
+        display: flex;
+        justify-content: center;
+        background-color: white;
+    }
+
 main.table {
     width: 82vw;
     height: 77vh;
     background-color: transparent;
-
     backdrop-filter: blur(7px);
     box-shadow: 0 .4rem .8rem #0005;
     border-radius: .8rem;
-
+    padding: 10px;
     overflow: hidden;
 }
 
@@ -31,7 +67,7 @@ main.table {
     height: 10%;
     background-color: dimgrey;
     padding: .8rem 1rem;
-
+    border-radius: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -302,4 +338,8 @@ thead th.active,tbody td.active {
 .export_file .export_file-options img{
     width: 2rem;
     height: auto;
+}
+
+.hover-blue:hover {
+    color: blue;
 }

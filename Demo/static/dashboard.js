@@ -57,3 +57,25 @@ document.addEventListener("DOMContentLoaded", function() {
       console.log("Logging out...");
   });
 });
+
+document.getElementById('toPDF').addEventListener('mouseover', function() {
+  this.classList.add('hover-blue');
+});
+
+document.getElementById('toPDF').addEventListener('mouseout', function() {
+  this.classList.remove('hover-blue');
+});
+
+
+
+function exportTableToExcel() {
+  var table = document.querySelector('table'); // Adjust the selector if necessary
+  var workbook = XLSX.utils.table_to_book(table); // Convert the table to a workbook
+  var defaultFileName = "table_data"; // Default file name
+
+  // Prompt user for file name, use default if no name is entered
+  var fileName = prompt("Enter the name of the file", defaultFileName);
+  if (fileName) {
+      XLSX.writeFile(workbook, fileName + '.xlsx'); // Write the file
+  }
+}
